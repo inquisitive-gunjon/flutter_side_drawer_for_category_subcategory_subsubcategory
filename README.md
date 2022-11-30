@@ -1,18 +1,37 @@
 # complex_drawer_for_category_subcategory_subsubcategory
 
-A new Flutter project.
+![Screenshot 2022-11-30 at 9 34 45 AM](https://user-images.githubusercontent.com/118876490/204708337-348f59db-993e-4525-85e1-2178999dcb10.png)
 
-## Getting Started
+# Flutter drawer showing
+ Category 
+ Sub Category
+ Sub Sub Category
 
-This project is a starting point for a Flutter application.
+Using Expansion Tile widget  
 
-A few resources to get you started if this is your first Flutter project:
+## Requirement : 
+A model class contains some static list of data
+Flutter Drawer Widget
+Flutter ExpansionTile Widget
+Listview Builder 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Step 1 :  
+Create two dart file in your lib folder
+	1.model.dart
+	2.category_screen.dart
 
-# flutter_side_drawer_for_category_subcategory_subsubcategory
+## Step 2 :  
+In your model.dart file create a model class and make different list of data for
+category
+sub category
+sub sub category
+
+## Step 3 :  
+In your category_screen dart file design your ui 
+	1.Create a class extend with stateful widget
+	2.In your scaffold take an appbar
+	3,take a drawer
+	4.drawer child property contains listview builder which return expansion tile
+	5.Expansion tile has a lot of property..here we will use title and children   property in our app. 
+
