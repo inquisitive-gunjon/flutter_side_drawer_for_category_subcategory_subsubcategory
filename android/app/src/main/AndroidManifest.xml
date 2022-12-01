@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.complex_drawer_for_category_subcategory_subsubcategory">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="complex_drawer_for_category_subcategory_subsubcategory"
         android:name="${applicationName}"
