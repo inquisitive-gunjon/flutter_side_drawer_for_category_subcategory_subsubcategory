@@ -15,7 +15,6 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -82,6 +81,7 @@ class _LandingScreenState extends State<LandingScreen> {
         //     ),
         //   )
         drawer: Drawer(child: Consumer<CategoryProvider>(
+
           builder: (context, categoryProvider, c) {
             return SingleChildScrollView(
               child: Column(
@@ -102,6 +102,7 @@ class _LandingScreenState extends State<LandingScreen> {
                         }
 
 
+
                         return ExpansionTile(
                           title: Text(
                               "${categoryProvider.categoryList[index].name}"),
@@ -109,20 +110,36 @@ class _LandingScreenState extends State<LandingScreen> {
                             // Text("${snapshot.data![index].name}"),
                             ListView.builder(
                                 shrinkWrap: true,
-                                itemCount:
-                                    subCategory != null ? subCategory.length : 0,
-                                itemBuilder: (context, sunCategoryIndex) {
+                                itemCount: subCategory != null
+                                    ? subCategory.length
+                                    : 0,
+                                itemBuilder: (context, subCategoryIndex) {
                                   return ExpansionTile(
                                     title: Text(
-                                        "${subCategory![sunCategoryIndex].name}"),
+                                        "${subCategory![subCategoryIndex].name}"),
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 30),
+                                        child: ListView.builder(
+                                            shrinkWrap: true,
+                                            itemCount: subCategory != null
+                                                ? subCategory.length
+                                                : 0,
+                                            itemBuilder:
+                                                (context, subSubCategoryIndex) {
+                                              return Text(
+                                                  "${subCategory![subSubCategoryIndex].name}");
+                                            }),
+                                      )
+                                    ],
                                   );
                                 })
                           ],
                         );
                       }),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: height * 0.015, top: height * 0.20),
+                    padding: EdgeInsets.only(
+                        left: height * 0.015, top: height * 0.20),
                     child: ListTileSwitch(
                       value: themeChange.darkTheme,
                       leading: const Icon(
